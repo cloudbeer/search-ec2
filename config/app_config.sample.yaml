@@ -1,0 +1,39 @@
+# Search EC2 Application Configuration
+
+server:
+  host: "0.0.0.0"
+  port: 8080
+  mode: "debug" # debug, release, test
+
+qdrant:
+  host: "localhost"
+  port: 6334  # 使用 gRPC 端口而不是 HTTP 端口
+  api_key: "xxxx111"
+  collection_name: "products"
+  vector_size: 1536 # 向量维度，需要根据 titan-emb 模型调整
+
+openai:
+  api_key: "xxxxx"
+  base_url: "https://xxxxx/v1"
+  embedding_model: "titan-emb"
+  chat_model: "sonnet37"
+  max_tokens: 4096
+  timeout: 30 # seconds
+
+search:
+  max_results: 50
+  similarity_threshold: 0.7
+  enable_cache: true
+  cache_ttl: 300 # seconds
+
+logging:
+  level: "info" # debug, info, warn, error
+  format: "json" # json, text
+  output: "stdout" # stdout, file
+  file_path: "logs/app.log"
+
+features:
+  enable_batch_import: true
+  enable_variant_generation: true
+  enable_function_calling: true
+  enable_search_suggestions: true

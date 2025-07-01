@@ -1,0 +1,50 @@
+{
+  "function_name": "parse_product_query",
+  "description": "解析用户商品查询意图，提取商品类型、属性和过滤条件",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "product_type": {
+        "type": "string",
+        "description": "商品类型或类别，如牛仔裤、T恤、运动鞋、手机等"
+      },
+      "color": {
+        "type": "string",
+        "description": "颜色要求，如红色、蓝色、黑色等"
+      },
+      "price_min": {
+        "type": "number",
+        "description": "最低价格，单位为元"
+      },
+      "price_max": {
+        "type": "number",
+        "description": "最高价格，单位为元"
+      },
+      "brand": {
+        "type": "string",
+        "description": "品牌要求，如Nike、Adidas、Apple等"
+      },
+      "size": {
+        "type": "string",
+        "description": "尺寸要求，如S、M、L、XL、32、42等"
+      },
+      "material": {
+        "type": "string",
+        "description": "材质要求，如棉质、丝绸、皮革、金属等"
+      },
+      "style": {
+        "type": "string",
+        "description": "风格要求，如简约、复古、时尚、商务、休闲等"
+      },
+      "occasion": {
+        "type": "string",
+        "description": "使用场合，如运动、商务、休闲、正式等"
+      },
+      "gender": {
+        "type": "string",
+        "description": "性别要求，如男、女、中性等"
+      }
+    },
+    "required": ["product_type"]
+  }
+}
